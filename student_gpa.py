@@ -1,17 +1,41 @@
-# Name: NQuisenberry
-# File: student_gpa.py
-# Description: Accept student names and GPAs, then report Dean's List and Honor Roll eligibility.
+# Name: Nathan Quisenberry
+# File Name: student_honor_roll.py
+# Description: This program accepts student names and GPAs,
+# then determines whether the student qualifies for the
+# Dean's List or the Honor Roll.
 
 while True:
-    last_name = input("Enter the student's last name (or ZZZ to quit): ")
-    if last_name == "ZZZ":
+    # Get student's last name
+    last_name = input("Enter student's last name (or ZZZ to quit): ")
+
+    # Exit program if ZZZ is entered
+    if last_name.upper() == "ZZZ":
+        print("Program terminated.")
         break
 
-    first_name = input("Enter the student's first name: ")
-    gpa = float(input("Enter the student's GPA: "))
+    # Get student's first name
+    first_name = input("Enter student's first name: ")
 
-    student_name = f"{first_name} {last_name}"
+    # GPA validation
+    while True:
+        try:
+            gpa = float(input("Enter student's GPA: "))
+
+            if gpa < 0.0 or gpa > 4.0:
+                print("Error: GPA must be between 0.0 and 4.0.")
+            else:
+                break
+
+        except ValueError:
+            print("Error: Please enter a valid numeric GPA.")
+
+    # Check for Dean's List
     if gpa >= 3.5:
-        print(f"{student_name} has made the Dean's List.")
+        print(f"{first_name} {last_name} has made the Dean's List.")
+
+    # Check for Honor Roll
     if gpa >= 3.25:
-        print(f"{student_name} has made the Honor Roll.")
+        print(f"{first_name} {last_name} has made the Honor Roll.")
+
+    print()
+    # Blank line for readability
