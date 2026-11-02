@@ -1,8 +1,13 @@
 # Name: Nathan Quisenberry
-# File Name: student_honor_roll.py
+# File Name: student_gpa.py
 # Description: This program accepts student names and GPAs,
 # then determines whether the student qualifies for the
 # Dean's List or the Honor Roll.
+#
+# Variables:
+# last_name - stores the student's last name
+# first_name - stores the student's first name
+# gpa - stores the student's GPA as a floating-point number
 
 while True:
     # Get student's last name
